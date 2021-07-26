@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./command.sh
+    volumes:
+      - .:/usr/app
+      - ./node_modules:/usr/app/node_modules
+      - ./command.sh:/command.sh
+volumes:
+  my_node_modules:
